@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en-EN">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
+        <script type="text/javascript" src="js/site.js"></script>
+</head>
+<body>
+	<div class="container">
+		<form id="myform">
+			<div class="row">
+				<div class="col-md-3">
+					<h1></h1>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-3">
+					<label for="" class="control-label">Region</label>
+				</div>
+				<div class="col-md-3">
+					<select name="reg" id="" class="form-control" onchange="change_ats(this.form.reg.value)">
+						<option value="Absheron">Absheron</option>
+						<option value="Qabala">Qabala</option>
+					</select>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-3">
+					<label for="" class="control-label">ATS</label>
+				</div>
+				<div class="col-md-3">
+					<select name="ats" id="ats" class="form-control">
+						<option value="Absheron ATS">Absheron ATS</option>
+						<option value="Absheron ATS1">Absheron ATS1</option>
+					</select>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-3">
+					<label for="" class="control-label">Equipment Type</label>
+				</div>
+				<div class="col-md-3">
+					<select name="eq_type" class="form-control">
+						<option value="ADSL">ADSL</option>
+						<option value="Switch">Switch</option>
+					</select>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-3">
+					<label for="" class="control-label">Equipment</label>
+				</div>
+				<div class="col-md-3">
+					<select name="eq" class="form-control" onchange="change_spaces(this.form.eq.value)">
+						<option value="TP Link Router">TP Link</option>
+						<option value="Zyxel Router">Zyxel</option>
+					</select>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-3">
+					<label for="" class="control-label">Description</label>
+				</div>
+				<div class="col-md-3">
+					<p class="form-control-static" id="spaces_name">TP Link Router</p>
+				</div>
+			</div>
+
+
+
+			<div class="row form-group" id="row_ip_ad">
+				<div class="col-md-3">
+					<label for="" class="control-label">IP Adress</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" name="ip_ad" class="form-control" id="ip_address" oninput="query_ip_ad(this.form.ip_ad.value)">
+				</div>
+			</div>
+
+
+
+			<div class="row form-group" id="row_mac">
+				<div class="col-md-3">
+					<label for="" class="control-label">MAC Address</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" name="mac" class="form-control" oninput="query_mac(this.form.mac.value)">
+				</div>
+			</div>
+
+
+
+			<div class="row form-group" id="row_serial_e">
+				<div class="col-md-3">
+					<label for="" class="control-label">Equipment Serial</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" name="serial_e" class="form-control" oninput="query_serial_e(this.form.serial_e.value)">
+				</div>
+			</div>
+			<div class="row form-group" id="row_hostname">
+				<div class="col-md-3">
+					<label for="" class="control-label">System HostName</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" name="s_hostname" class="form-control" oninput="query_hostname(this.form.s_hostname.value)">
+				</div>
+			</div>
+			<div class="row form-group" id="row_code">
+				<div class="col-md-3">
+					<label for="" class="control-label">Ports</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" name="ports" class="form-control" oninput="query_code(this.form.ports.value)">
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-3">
+					<label for="" class="control-label">Date</label>
+				</div>
+				<div class="col-md-3">
+					<input type="date" name="checkin" class="form-control">
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-3">
+					  <input type="hidden" name="spaces" value="1" id="spaces">
+					  <button type="button" class="btn btn-default" onclick="query_record(
+					  this.form.reg.value,
+					  this.form.ats.value,
+					  this.form.eq_type.value,
+					  this.form.eq.value,
+					  this.form.spaces.value,
+					  this.form.ip_ad.value,
+					  this.form.mac.value,
+					  this.form.serial_e.value,
+					  this.form.s_hostname.value,
+					  this.form.ports.value,
+					  this.form.checkin.value)">Сохранить</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
